@@ -21,7 +21,7 @@
 */
 Route::get('/', 'Monujo\Controller\HomeController@getHome');
 
-# Login
+/* Login */
 Route::get('login', 'Monujo\Controller\AuthController@getLogin');
 Route::post('login', 'Monujo\Controller\AuthController@postLogin');
 
