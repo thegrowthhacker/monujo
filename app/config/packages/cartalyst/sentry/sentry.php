@@ -68,7 +68,7 @@ return array(
 		|
 		*/
 
-		'model' => 'Monujo\Model\User\Group',
+		'model' => 'Monujo\Model\Group',
 
 	),
 
