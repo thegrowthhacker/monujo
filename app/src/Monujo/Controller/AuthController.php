@@ -49,8 +49,12 @@ class AuthController extends BaseController {
 				// Try to log the user in
 				if (Sentry::authenticate(Input::only('email', 'password'), Input::get('remember-me', 0)))
 				{
-					// Redirect to the users page
-					return Redirect::to("login")->with('success', Lang::get('auth.messages.login.success'));
+
+					// Checking if we have url to go to
+					if(Session::has('pre_login_url'))
+						return Redirect::to(Session::get('pre_login_url'));
+					else
+						return Redirect::to("login")->with('success', Lang::get('auth.messages.login.success'));
 				}
 
 				// Redirect to the login page
