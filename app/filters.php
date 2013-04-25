@@ -35,7 +35,14 @@ App::after(function($request, $response)
 
 Route::filter('auth', function()
 {
-	if (Auth::guest()) return Redirect::route('login');
+	if (!Sentry::check()) 
+	{
+		// Put current full URL in session so we can go back
+		Session::forget('pre_login_url');
+		Session::put('pre_login_url', Request::fullUrl());
+
+		return Redirect::to('login');
+	}
 });
 
 
