@@ -1,8 +1,8 @@
-@extends('site.layouts.default')
+@extends('layouts.default')
 
 {{-- Page content --}}
 @section('content')
 <div class="page-header">
-	<h3>Monujo</h3>
+    <h3>Monujo</h3>
 </div>
 @stop

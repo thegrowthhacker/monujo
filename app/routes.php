@@ -15,15 +15,19 @@
  |--------------------------------------------------------------------------
 | Authentication and Authorization Routes
 |--------------------------------------------------------------------------
-|
-|
-|
+
 */
-Route::get('/', 'Monujo\Controller\HomeController@getHome');
+Route::any('/', array('as' => 'home' , function(){
+    return View::make('pages.home');
+}));
 
-/* Login */
-Route::get('login', 'Monujo\Controller\AuthController@getLogin');
-Route::post('login', 'Monujo\Controller\AuthController@postLogin');
+Route::get('login', array('as' => 'login.get', 'uses' => 'Monujo\Controller\UserController@getLogin'));
+Route::post('login', array('as' => 'login.post', 'uses' => 'Monujo\Controller\UserController@postLogin'));
 
-Route::get('logout', 'Monujo\Controller\AuthController@getLogout');
+Route::get('logout', array('as' => 'logout.get', 'uses' => 'Monujo\Controller\UserController@getLogout'));
 
+
+Route::group(array('before' => 'logged'), function () {
+    Route::get('profile', array('as' => 'profile.get', 'uses' => 'Monujo\Controller\UserController@getProfile'));
+    Route::post('profile', array('as' => 'profile.post', 'uses' => 'Monujo\Controller\UserController@postProfile'));
+});

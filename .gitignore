@@ -9,3 +9,5 @@ composer.lock
 
 *~
 .idea
+_ide_helpers
+_ide_helpers.php
