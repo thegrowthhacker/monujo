@@ -17,6 +17,19 @@ return array(
 
 	/*
 	|--------------------------------------------------------------------------
+	| Application URL
+	|--------------------------------------------------------------------------
+	|
+	| This URL is used by the console to properly generate URLs when using
+	| the Artisan command line tool. You should set this to the root of
+	| your application so that it is used when running Artisan tasks.
+	|
+	*/
+
+	'url' => 'http://localhost',
+
+	/*
+	|--------------------------------------------------------------------------
 	| Application Timezone
 	|--------------------------------------------------------------------------
 	|
@@ -52,7 +65,7 @@ return array(
 	|
 	*/
 
-	'key' => 'YourSecretKey!!!',
+	'key' => 'pljncZbKlX5gmJ4HdKSHxiX5IgkDbU35',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -83,6 +96,7 @@ return array(
 		'Illuminate\Foundation\Providers\KeyGeneratorServiceProvider',
 		'Illuminate\Log\LogServiceProvider',
 		'Illuminate\Mail\MailServiceProvider',
+		'Illuminate\Foundation\Providers\MaintenanceServiceProvider',
 		'Illuminate\Database\MigrationServiceProvider',
 		'Illuminate\Foundation\Providers\OptimizeServiceProvider',
 		'Illuminate\Pagination\PaginationServiceProvider',
@@ -101,7 +115,6 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 
 		//custom
-		'LaravelBook\Laravel4Powerpack\Providers\PowerpackServiceProvider',
 		'Cartalyst\Sentry\SentryServiceProvider',
 
 	),
@@ -148,7 +161,7 @@ return array(
 		'File'            => 'Illuminate\Support\Facades\File',
 		'Form'            => 'Illuminate\Support\Facades\Form',
 		'Hash'            => 'Illuminate\Support\Facades\Hash',
-		'Html'            => 'Illuminate\Support\Facades\Html',
+		'HTML'            => 'Illuminate\Support\Facades\HTML',
 		'Input'           => 'Illuminate\Support\Facades\Input',
 		'Lang'            => 'Illuminate\Support\Facades\Lang',
 		'Log'             => 'Illuminate\Support\Facades\Log',
@@ -170,9 +183,6 @@ return array(
 		'View'            => 'Illuminate\Support\Facades\View',
 
 		//custom
-		'HTML' => 'LaravelBook\Laravel4Powerpack\Facades\HTMLFacade',
-		'Form' => 'LaravelBook\Laravel4Powerpack\Facades\FormFacade',
-		'Str' => 'LaravelBook\Laravel4Powerpack\Facades\StrFacade',
 		'Sentry' => 'Cartalyst\Sentry\Facades\Laravel\Sentry'
 
 	),

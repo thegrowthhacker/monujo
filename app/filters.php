@@ -33,15 +33,11 @@ App::after(function($request, $response)
 |
 */
 
-Route::filter('auth', function()
+Route::filter('logged', function()
 {
 	if (!Sentry::check()) 
 	{
-		// Put current full URL in session so we can go back
-		Session::forget('pre_login_url');
-		Session::put('pre_login_url', Request::fullUrl());
-
-		return Redirect::to('login');
+		return Redirect::route('login.get');
 	}
 });
 
