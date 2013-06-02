@@ -1,5 +1,5 @@
 <?php
-
+use Cartalyst\Sentry\Facades\Laravel\Sentry;
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -17,9 +17,7 @@
 |--------------------------------------------------------------------------
 
 */
-Route::any('/', array('as' => 'home', function () {
-    return View::make('pages.home');
-}));
+Route::any('/', array('as' => 'home', 'uses' => 'Monujo\Controller\HomeController@getHome'));
 
 Route::get('login', array('as' => 'login.get', 'uses' => 'Monujo\Controller\UserController@getLogin'));
 Route::post('login', array('as' => 'login.post', 'uses' => 'Monujo\Controller\UserController@postLogin'));

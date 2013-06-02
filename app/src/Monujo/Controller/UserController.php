@@ -126,7 +126,7 @@ class UserController extends PageController
         return Redirect::route("signup.get")->withInput()->withErrors($validator);
     }
 
-    function getActivate($id, $token)
+    public function getActivate($id, $token)
     {
         try {
             // Find the user using the user id
@@ -149,7 +149,7 @@ class UserController extends PageController
         return Redirect::route("home")->with("error", !empty($error) ? Lang::get($error) : Lang::get("auth.activation.error"));
     }
 
-    function getPasswordForgot()
+    public function getPasswordForgot()
     {
         // Are we logged in?
         if (Sentry::check()) {
@@ -160,7 +160,7 @@ class UserController extends PageController
         return View::make("pages.passwordForgot");
     }
 
-    function postPasswordForgot()
+    public function postPasswordForgot()
     {
         $rules = array(
             "email" => "required|email"
@@ -206,7 +206,7 @@ class UserController extends PageController
         return View::make("pages.passwordReset")->with($data);
     }
 
-    function postPasswordReset()
+    public function postPasswordReset()
     {
         $rules = array(
             "user_id" => "required",

@@ -22,6 +22,7 @@ return array(
     "label.username" => "Username",
     "label.remember" => "Remember me",
     "label.button.login" => "Sign in",
+    "label.button.logout" => "Logout",
     "label.button.submit" => "Submit",
     "label.button.signup" => "Sign up",
     "errors.any" => "Please check the form below for errors.",

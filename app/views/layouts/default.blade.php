@@ -14,7 +14,6 @@
     @include("partials/head")
 </head>
 
-<body>
 <!-- Container -->
 <div class="container">
 
