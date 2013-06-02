@@ -1,5 +1,5 @@
 <?php
-
+use Cartalyst\Sentry\Facades\Laravel\Sentry;
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -17,9 +17,7 @@
 |--------------------------------------------------------------------------
 
 */
-Route::any('/', array('as' => 'home', function () {
-    return View::make('pages.home');
-}));
+Route::any('/', array('as' => 'home', 'uses' => 'Monujo\Controller\HomeController@getHome'));
 
 Route::get('login', array('as' => 'login.get', 'uses' => 'Monujo\Controller\UserController@getLogin'));
 Route::post('login', array('as' => 'login.post', 'uses' => 'Monujo\Controller\UserController@postLogin'));
@@ -38,7 +36,7 @@ Route::get('user/password_reset/{id}/{token}', array('as' => 'reset.get', 'uses'
 Route::post('user/password_reset', array('as' => 'reset.post', 'uses' => 'Monujo\Controller\UserController@postPasswordReset'));
 
 
-Route::group(array('before' => 'logged'), function () {
-    Route::get('profile', array('as' => 'profile.get', 'uses' => 'Monujo\Controller\UserController@getProfile'));
-    Route::post('profile', array('as' => 'profile.post', 'uses' => 'Monujo\Controller\UserController@postProfile'));
+Route::group(array('prefix' => 'api', 'before' => 'logged'), function () {
+    Route::get('account', array('as' => 'profile.get', 'uses' => 'Monujo\Controller\Api\AccountController@getAccount'));
+    Route::post('account', array('as' => 'profile.post', 'uses' => 'Monujo\Controller\Api\AccountController@postAccount'));
 });

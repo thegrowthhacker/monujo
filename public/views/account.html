@@ -1,0 +1,50 @@
+<form class="form-horizontal">
+
+    <div class="control-group">
+        <label class="control-label" for="name">Name</label>
+        <div class="controls">
+            <input type="text" id="name" ng-model="account.first_name"></div>
+    </div>
+
+    <div class="control-group ">
+        <label class="control-label" for="surname">Surname</label>
+
+        <div class="controls">
+            <input type="text" id="surname" ng-model="account.last_name"></div>
+    </div>
+
+    <div class="control-group ">
+        <label class="control-label" for="email">Email</label>
+
+        <div class="controls">
+            <input type="text" id="email" ng-model="account.email"></div>
+    </div>
+
+    <div class="control-group ">
+        <label class="control-label" for="username">Username</label>
+
+        <div class="controls">
+            <input name="username" type="text" id="username" disabled></div>
+    </div>
+
+    <div class="control-group ">
+        <label class="control-label" for="password">New Password</label>
+
+        <div class="controls">
+            <input name="password" type="password" id="password"></div>
+    </div>
+
+    <div class="control-group ">
+        <label class="control-label" for="password_confirmation">New password confirmation</label>
+
+        <div class="controls">
+            <input name="password_confirmation" type="password" value="" id="password_confirmation"></div>
+    </div>
+
+    <div class="control-group">
+        <div class="controls">
+            <button type="submit" class="btn btn-success">Update Profile</button>
+        </div>
+    </div>
+
+</form>
