@@ -36,7 +36,7 @@ Route::get('user/password_reset/{id}/{token}', array('as' => 'reset.get', 'uses'
 Route::post('user/password_reset', array('as' => 'reset.post', 'uses' => 'Monujo\Controller\UserController@postPasswordReset'));
 
 
-Route::group(array('before' => 'logged'), function () {
-    Route::get('profile', array('as' => 'profile.get', 'uses' => 'Monujo\Controller\UserController@getProfile'));
-    Route::post('profile', array('as' => 'profile.post', 'uses' => 'Monujo\Controller\UserController@postProfile'));
+Route::group(array('prefix' => 'api', 'before' => 'logged'), function () {
+    Route::get('account', array('as' => 'profile.get', 'uses' => 'Monujo\Controller\Api\AccountController@getAccount'));
+    Route::post('account', array('as' => 'profile.post', 'uses' => 'Monujo\Controller\Api\AccountController@postAccount'));
 });

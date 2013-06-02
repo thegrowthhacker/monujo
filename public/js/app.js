@@ -1,9 +1,9 @@
 //version 1.0.0
-var app = angular.module('app', ['filters', 'services', 'directives', 'controllers']), 
-	services = angular.module("services", []),
-	controllers = angular.module("controllers", []),
-	directives = angular.module("directives", []),
-	filters = angular.module("filters", []);
+var app = angular.module('app', ['filters', 'services', 'directives', 'controllers']),
+    services = angular.module("services", []),
+    controllers = angular.module("controllers", []),
+    directives = angular.module("directives", []),
+    filters = angular.module("filters", []);
 
 
 app.config(function ($routeProvider) {
@@ -35,4 +35,4 @@ app.config(function ($routeProvider) {
         .otherwise({
             redirectTo: '/'
         });
-});
+}).constant("config", window.APP.config);

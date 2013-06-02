@@ -8,6 +8,18 @@ services.factory('game', ["$http", function ($http) {
     };
 }]);
 
+
+services.factory('account', ["$http", "config", function ($http, config) {
+    return{
+        get: function () {
+            return $http.get(config.baseUrl + "/account").then(function (res) {
+                return res.data
+            });
+        }
+    }
+
+}]);
+
 services.factory('ls', function () {
     var STORAGE_ID = 'app';
     return {
