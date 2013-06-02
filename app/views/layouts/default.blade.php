@@ -17,51 +17,22 @@
 <body>
 <!-- Container -->
 <div class="container">
-    <!-- Navbar -->
-    <div class="navbar navbar-inverse">
-        <div class="navbar-inner">
-            <div class="container">
-                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </a>
 
-                <div class="nav-collapse collapse">
-                    <ul class="nav">
-                        <li><a href="{{ URL::route("home") }}"><i
-                                class="icon-home icon-white"></i> Home</a></li>
-                    </ul>
-
-                    <ul class="nav pull-right">
-                        @if (Sentry::check())
-                        <li class="dropdown{{ (Request::is(" account
-                        *") ? " active" : "") }}">
-                        <a class="dropdown-toggle" id="dLabel" role="button" data-toggle="dropdown" data-target="#"
-                           href="{{ URL::to("account") }}">
-                        Welcome, {{ Sentry::getUser()->first_name }}
-                        <b class="caret"></b>
-                        </a>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                            <li class="divider"></li>
-                            <li><a href="{{ URL::route('logout.get') }}"><i class="icon-off"></i> Logout</a></li>
-                        </ul>
-                        </li>
-                        @else
-                        <li>
-                            <a
-                                href="{{ URL::route('login.get') }}">{{Lang::get('auth.label.button.login') }}</a></li>
-                        <li>
-                            <a
-                                href="{{ URL::route('signup.get') }}">{{Lang::get('auth.label.button.signup') }}</a></li>
-                        @endif
-                    </ul>
-                </div>
-                <!-- ./ nav-collapse -->
-            </div>
+    <header class="row">
+        <div id="logo" class="span3">
+            <a href="{{ URL::route('home') }}">
+                <img src="{{ URL::asset('img/logo.png') }}">
+            </a>
         </div>
-    </div>
-    <!-- ./ navbar -->
+        <div class="span9">
+            <ul class="nav nav-pills pull-right">
+                <li class=""><a href="">About</a></li>
+                <li class=""><a href="">Blog</a></li>
+                <li><a href="{{ URL::route('login.get') }}">{{Lang::get('auth.label.button.login') }}</a></li>
+                <li><a class="btn success" href="{{ URL::route('signup.get') }}">{{Lang::get('auth.label.button.signup') }}</a></li>
+            </ul>
+        </div>
+    </header>
 
     @include("partials/notifications")
     @yield("content")
