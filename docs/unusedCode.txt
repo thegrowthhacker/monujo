@@ -1,0 +1,66 @@
+for remembering purpose only :)
+
+//services.factory('requestBusChannel', ['$rootScope', function ($rootScope) {
+//    var startRequestEvent = 'event:startRequest',
+//        stopRequestEvent = 'event:stopRequest';
+//
+//    var requestStarted = function () {
+//        $rootScope.$broadcast(startRequestEvent);
+//    };
+//    var requestEnded = function () {
+//        $rootScope.$broadcast(stopRequestEvent);
+//    };
+//    var onRequestStarted = function ($scope, handler) {
+//        $scope.$on(startRequestEvent, function () {
+//            handler();
+//        });
+//    };
+//    var onRequestEnded = function ($scope, handler) {
+//        $scope.$on(stopRequestEvent, function () {
+//            handler();
+//        });
+//    };
+//    return {
+//        requestStarted: requestStarted,
+//        requestEnded: requestEnded,
+//        onRequestStarted: onRequestStarted,
+//        onRequestEnded: onRequestEnded
+//    };
+//}])
+
+
+
+
+//services.factory('httpInterceptor', ["$q", "notification" , "requestBusChannel", function ($q, notification, requestBusChannel) {
+//    return function (promise) {
+//        return promise.then(function (response) {
+//            requestBusChannel.requestEnded();
+//            return response;
+//        }, function (response) {
+//            requestBusChannel.requestEnded();
+//            notification.error("An error has occoured");
+//            return $q.reject(response);
+//        });
+//    }
+//}]);
+
+
+
+directives.directive('spinner', ['requestBusChannel', function (requestBusChannel) {
+    return {
+        restrict: "C",
+        link: function (scope, element) {
+            element.hide();
+            var startRequestHandler = function () {
+                element.show();
+            };
+            var endRequestHandler = function () {
+                element.hide();
+            };
+            //subscribe
+            requestBusChannel.onRequestStarted(scope, startRequestHandler);
+            requestBusChannel.onRequestEnded(scope, endRequestHandler);
+        }
+    };
+}]);
+

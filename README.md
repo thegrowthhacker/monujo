@@ -53,8 +53,8 @@ Monujo send email so you need to configure your outgoing mail server under `app/
 
 cd into the build folder and from your command line run:
 
-	chmod +x setup.sh
-	./setup.sh
+	chmod +x build.sh
+	./buld.sh install
 
 ***note that if you have changed the `local` environment you need to update the setup.sh file in order to runs migration on your specific environment***
 

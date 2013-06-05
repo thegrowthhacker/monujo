@@ -47,7 +47,7 @@ Signup
 
         <div class="control-group">
             <div class="controls">
-             <button type="submit" class="btn">{{ Lang::get('auth.label.button.signup') }}</button>
+                <button type="submit" class="btn">{{ Lang::get('auth.label.button.signup') }}</button>
             </div>
         </div>
 
