@@ -1,50 +1,66 @@
-<form class="form-horizontal">
+<div class="span8 offset1">
 
-    <div class="control-group">
-        <label class="control-label" for="name">Name</label>
-        <div class="controls">
-            <input type="text" id="name" ng-model="account.first_name"></div>
-    </div>
+    <form ng-submit="updateProfile()" name="form" class="form-horizontal">
 
-    <div class="control-group ">
-        <label class="control-label" for="surname">Surname</label>
+        <div class="control-group">
+            <label class="control-label" for="name">Name</label>
 
-        <div class="controls">
-            <input type="text" id="surname" ng-model="account.last_name"></div>
-    </div>
-
-    <div class="control-group ">
-        <label class="control-label" for="email">Email</label>
-
-        <div class="controls">
-            <input type="text" id="email" ng-model="account.email"></div>
-    </div>
-
-    <div class="control-group ">
-        <label class="control-label" for="username">Username</label>
-
-        <div class="controls">
-            <input name="username" type="text" id="username" disabled></div>
-    </div>
-
-    <div class="control-group ">
-        <label class="control-label" for="password">New Password</label>
-
-        <div class="controls">
-            <input name="password" type="password" id="password"></div>
-    </div>
-
-    <div class="control-group ">
-        <label class="control-label" for="password_confirmation">New password confirmation</label>
-
-        <div class="controls">
-            <input name="password_confirmation" type="password" value="" id="password_confirmation"></div>
-    </div>
-
-    <div class="control-group">
-        <div class="controls">
-            <button type="submit" class="btn btn-success">Update Profile</button>
+            <div class="controls">
+                <input type="text" id="name" ng-model="account.first_name"/></div>
         </div>
-    </div>
 
-</form>
+        <div class="control-group ">
+            <label class="control-label" for="surname">Surname</label>
+
+            <div class="controls">
+                <input type="text" id="surname" ng-model="account.last_name"></div>
+        </div>
+
+        <div class="control-group" ng-class="{error: form.email.$dirty && form.email.$invalid}">
+            <label class="control-label" for="email">Email</label>
+
+            <div class="controls">
+                <input type="email" id="email" name="email" ng-model="account.email" required>
+                <span ng-show="form.email.$dirty && form.email.$error.required" class="help-inline">Tell us your email.</span>
+                <span ng-show="form.email.$dirty && form.email.$error.email" class="help-inline">This is not a valid email.</span>
+            </div>
+
+        </div>
+
+        <div class="control-group ">
+            <label class="control-label" for="username">Username</label>
+
+            <div class="controls">
+                <input name="username" ng-model="account.username" type="text" id="username" disabled></div>
+        </div>
+
+        <div class="control-group" ng-class="{error: form.password.$dirty && form.password.$invalid}">
+            <label class="control-label" for="password">New Password</label>
+
+            <div class="controls">
+                <input name="password" type="password" id="password"
+                       ui-validate="{yeppa : '$value.length===0 || $value.length>6'}" ng-model="account.password"></div>
+        </div>
+        <div class="control-group"
+             ng-class="{error: form.password_confirmation.$invalid}">
+            <label class="control-label" for="password_confirmation">New password confirmation</label>
+
+            <div class="controls">
+                <input ng-model="account.password_confirmation" name="password_confirmation" type="password"
+                       id="password_confirmation" ui-validate="{yeppa : '$value === account.password'}"
+                       ui-validate-watch="'account.password'">
+                <span ng-show="form.password_confirmation.$invalid"
+                      class="help-inline">Must match the above password.</span>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <div class="controls">
+                <button type="submit"
+                        ng-disabled="form.$invalid || (form.$dirty && form.$invalid)"
+                        class="btn btn-success btn-large">Update Profile
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

@@ -2,7 +2,7 @@
 
 {{-- Page content --}}
 @section('content')
-<div class="container" ng-app="app">
+<div class="container">
     <div class="row">
         <div ng-controller="MenuCtrl" class="span3">
             <ul class="nav nav-list">
@@ -17,7 +17,7 @@
             </ul>
 
         </div>
-        <div ng-view class="span9"></div>
+        <div ng-view class="span9" class="well"></div>
     </div>
 </div>
 @stop

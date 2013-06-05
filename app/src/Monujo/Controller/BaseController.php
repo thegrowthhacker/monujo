@@ -2,7 +2,6 @@
 
 use Illuminate\Routing\Controllers\Controller;
 use Illuminate\Support\Facades\View;
-
 /**
  *
  * Monujo

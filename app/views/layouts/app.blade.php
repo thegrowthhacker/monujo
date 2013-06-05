@@ -14,7 +14,19 @@
     @include("partials/headApp")
 </head>
 
-<body>
+<body ng-app="app">
+<div class="loading" ng-class="{show:isLoading}">
+    <div class="loading-wrapper">
+        <div class="loadingAnimation" ng-show="isLoading" style="">
+            <div class="bowl_ringG">
+                <div class="ball_holderG">
+                    <div class="ballG">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- Container -->
 <div class="container">
 
