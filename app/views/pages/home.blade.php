@@ -1,8 +1,10 @@
 @extends('layouts.default')
-
-{{-- Page content --}}
 @section('content')
-<div class="page-header">
-    <h3>Monujo</h3>
+<div class="content">
+    <div class="container">
+        <div class="row">
+            Home Landing?
+        </div>
+    </div>
 </div>
 @stop

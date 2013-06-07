@@ -23,7 +23,10 @@ Check out our [wiki](https://github.com/monujo/monujo/wiki) for further informat
 
 	cd your-folder
 	curl -s http://getcomposer.org/installer | php
-	php composer.phar install
+	php composer.phar install --dev
+
+*installing with `--dev` flag allows you to run test in your local environment. This is not intended for a production environment*
+
 
 #####2.2) For globally composer installations
 

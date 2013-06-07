@@ -14,7 +14,8 @@
 <script src="{{ URL::asset('components/angular-1.1.5/angular-resource.js') }}"></script>
 <script src="{{ URL::asset('components/angular-1.1.5/angular-cookies.js') }}"></script>
 <script src="{{ URL::asset('components/angular-1.1.5/angular-sanitize.js') }}"></script>
-<script src="{{ URL::asset('components/bootstrap.min.js') }}"></script>
+<script src="{{ URL::asset('components/placeholders-0.0.1-SNAPSHOT.js') }}"></script>
+<script src="{{ URL::asset('components/bootstrap.js') }}"></script>
 
 <script src="{{ URL::asset('components/angular-ui-0.0.4.js') }}"></script>
 <script src="{{ URL::asset('components/toastr.js') }}"></script>

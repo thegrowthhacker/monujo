@@ -22,13 +22,17 @@ return array(
     "label.username" => "Username",
     "label.remember" => "Remember me",
     "label.button.login" => "Sign in",
+    "label.button.login.AlreadyUser" => "Already a user ? Sign in",
     "label.button.logout" => "Logout",
     "label.button.submit" => "Submit",
-    "label.button.signup" => "Sign up",
+    "label.button.signup.top" => "Sign up",
+    "label.button.signup" => "Create an account",
+    "label.button.signup.notUser" => "Not a user ? Sign up",
     "errors.any" => "Please check the form below for errors.",
 
     "signup.welcome.mail.subject" => "Welcome to Monujo",
     "forgot.mail.subject" => "Monujo - password reset",
+    "password.forgotten" => "Forgotten password",
     "forgot.success" => "We have sent you an email with the instructions to reset your password.",
     "forgot.error" => "There was a problem, please try again.",
 
@@ -41,5 +45,6 @@ return array(
     "reset.success" => "New password created, you can now sign in.",
     "reset.error" => "There was a problem while trying to reset your password, please try again.",
     "reset.intro" => "Create a new password",
+    "tos" => "By clicking on \"Create an account\" below, you are agreeing to the Terms of Service and the Privacy Policy.",
 
 );
