@@ -45,6 +45,7 @@ Signup
                         <div class="controls">
                             {{ Form::password('password', array('class' => 'input-block-level')) }}
                             {{ $errors->first('password', '<span class="help-inline">:message</span>') }}
+                            <span class="help-block">{{ Lang::get('auth.label.password.hint') }}</span>
                         </div>
                     </div>
 

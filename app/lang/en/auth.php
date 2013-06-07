@@ -18,6 +18,7 @@ return array(
 
     "label.email" => "Email",
     "label.password" => "Password",
+    "label.password.hint" => "Must contain one lowercase letter, one number, and be at least 7 characters long.",
     "label.password.confirm" => "Password confirmation",
     "label.username" => "Username",
     "label.remember" => "Remember me",

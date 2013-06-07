@@ -38,6 +38,7 @@ i {
 
 .box input{
     background-color: #fafafa;
+    margin-bottom: 0px;
 }
 
 .box label{
@@ -46,6 +47,18 @@ i {
 
 .box.centered{
     margin: 0 auto;
+}
+
+.box .control-group{
+    margin-top:10px;
+}
+
+.box .help-block{
+    font-size: 13px;
+}
+
+.box .error .help-block{
+    display: none;
 }
 
 .padded {
